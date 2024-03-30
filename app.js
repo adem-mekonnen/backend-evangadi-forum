@@ -44,10 +44,9 @@ app.use("/api/v1/reset", restRout);
 
 // Default route
 // Default route
-// app.use(express.static(path.join(__dirname, "build")));
-// app.get("/", (req, res) => {
-//   res.sendFile(path.join(__dirname, "build", "index.html"));
-// });
+app.get("/", (req, res) => {
+  res.status(200).sendFile(__dirname + "/index.html");
+});
 // error handlers
 app.use(notFoundMiddleware);
 
